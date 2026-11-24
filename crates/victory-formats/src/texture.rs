@@ -902,6 +902,12 @@ mod tests {
                 depth: 16,
                 ..desc(64, 32, 7, 4, Swizzle::SW_4KB_S)
             },
+            // Thick S layout with four-byte runs and a partial final run.
+            Desc {
+                dimension: Dimension::Tex3d,
+                depth: 5,
+                ..desc(19, 11, 4, 1, Swizzle::SW_4KB_S)
+            },
         ];
         for d in cases {
             let l = Layout::new(&d).unwrap();
